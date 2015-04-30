@@ -395,7 +395,7 @@ Hash function has been select, and data can be added to table. If data is alread
 it is deleted and set to NULL.
 */
 void HashTab::selectHashFunction(int hf){
-    if(hf>0 && hf<5){
+    if(hf>0 && hf<11){
         hashfunc = hf;
         resetData();
         cout << "Data reset." << endl;
