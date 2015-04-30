@@ -575,12 +575,20 @@ void HashTab::currentSpecs(){
 
     double sumdepD = sumdep;
     double tsizeD = tsize;
-
+    
     //calculates the average table depth based on the sum of all depths and the total table size
+    int practicalAvgdep(0);
     if(used>0){
-        avgdep = sumdepD/tsizeD;
-    }
-
+        int practicalSize(0);
+        for(int i = 0; i<tsize; i++){
+            if(hashTable[i]!=NULL){
+                practicalSize++;
+            }
+        avgdep = sumdepD/tsize; 
+        practicalAvgdep = sumdepD/practicalSize;
+        /* You see, the avgdep gives us the same number for everycase! sumdep is equal totdep!
+        The average depth for a hash table with size 1000 and 300 words but all of them packed in one block
+        should be 300, not 0.3!!! */
     cout << "Hash function: " << hashfunc << endl;
     cout << "Table size: " << tsize << endl;
     cout << "Total words: " << totwords << endl;
