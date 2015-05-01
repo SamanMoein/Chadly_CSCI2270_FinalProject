@@ -261,10 +261,7 @@ void HashTab::histogramCollisions(){
         }
     }
 
-    //deletes all entries in data vector
-    while(!data.empty()){
-        data.erase(data.begin());
-    }
+    
 }
 
 /*
@@ -368,10 +365,7 @@ void HashTab::histogramDepth(){
         }
     }
 
-    //deletes all entries in data vector
-    while(!data.empty()){
-        data.erase(data.begin());
-    }
+   
 
 }
 
